@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import database.CrimeDatabase
 import java.util.UUID
+import androidx.lifecycle.LiveData
 
 private const val DATABASE_NAME = "crimedatabase"
 
@@ -15,8 +16,8 @@ constructor(context: Context) {
             DATABASE_NAME
         ).build()
     private val crimeDao = database.crimeDao()
-    fun getCrimes(): List<Crime> = crimeDao.getCrimes()
-    fun getCrime(id: UUID): Crime? = crimeDao.getCrime(id)
+    fun getCrimes(): LiveData<List<Crime>> = crimeDao.getCrimes()
+    fun getCrime(id: UUID): LiveData<Crime?> = crimeDao.getCrime(id)
 
     companion object {
         private var INSTANCE: CrimeRepository? = null
