@@ -37,7 +37,6 @@ class CrimeFragment : Fragment(),
         crime = Crime()
         val crimeId: UUID =
             arguments?.getSerializable(ARG_CRIME_ID) as UUID
-
     }
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -74,7 +73,6 @@ class CrimeFragment : Fragment(),
                 count: Int,
                 after: Int
             ) {
-// Это пространство оставлено пустым специально
             }
             override fun onTextChanged(
                 sequence: CharSequence?,
@@ -87,7 +85,6 @@ class CrimeFragment : Fragment(),
             }
             override fun
                     afterTextChanged(sequence: Editable?) {
-// И это
             }
         }
         titleField.addTextChangedListener(titleWatcher)
