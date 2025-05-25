@@ -50,7 +50,8 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("androidx.lifecycle:lifecycle-extensions:2.0.0")
-    implementation("androidx.lifecycle:lifecycle-livedata:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-livedata:2.6.0-alpha05")
     implementation("androidx.recyclerview:recyclerview:1.0.0")
+    implementation("com.google.firebase:firebase-firestore-ktx:25.1.4")
     ksp("androidx.room:room-compiler:2.5.0")
 }
