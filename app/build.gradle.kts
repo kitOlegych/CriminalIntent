@@ -1,16 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("com.google.devtools.ksp")
-    //id("kotlin-kapt")
+    id("com.google.devtools.ksp") version "2.0.21-1.0.27"
 }
 
 android {
-    namespace = "com.bignerdranch.android.criminalintent"
+    namespace = "com.example.criminalintent"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.bignerdranch.android.criminalintent"
+        applicationId = "com.example.criminalintent"
         minSdk = 21
         targetSdk = 35
         versionCode = 1
@@ -44,14 +43,13 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.room.common.jvm)
-    implementation(libs.androidx.room.runtime.android)
+    implementation(libs.androidx.lifecycle.extensions)
+    implementation(libs.androidx.lifecycle.livedata)
+    implementation(libs.androidx.recyclerview)
+    implementation (libs.androidx.fragment.ktx)
+    implementation(libs.androidx.room.runtime)
+    ksp (libs.androidx.room.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation("androidx.lifecycle:lifecycle-extensions:2.0.0")
-    implementation("androidx.lifecycle:lifecycle-livedata:2.6.0-alpha05")
-    implementation("androidx.recyclerview:recyclerview:1.0.0")
-    implementation("com.google.firebase:firebase-firestore-ktx:25.1.4")
-    ksp("androidx.room:room-compiler:2.5.0")
 }
